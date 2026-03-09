@@ -1,0 +1,50 @@
+String Reverse
+public class StringUtils {
+    public String reverse(String input) {
+        return new StringBuilder(input).reverse().toString();
+    }
+}
+
+Things to test:
+
+Normal string
+
+Empty string
+
+Single character
+
+Palindrome
+-------------------------------------
+public class StringReverseTest{
+    @Test
+    public void isNormalStringTest()
+    {
+    StringUtils st=new StringUtils();
+    String result=st.reverse("Keerthika");
+    assertEquals("akihtreeK",result);
+    }
+    
+    @Test
+    public void isEmptyStringTest()
+    {
+        StringUtils st=new StringUtils();
+        String result=st.reverse("");
+        assertEquals("",result);
+    }
+    
+    @Test
+    public void isSingleCharacterTest()
+    {
+        StringUtils st=new StringUtils();
+        String result=st.reverse("a");
+        assertEquals("a",result);
+    }
+    
+    @Test
+    public void isPalindromeTest()
+    {
+        StringUtils st=new StringUtils();
+        String result=st.reverse("noon");
+        assertEquals("noon",result);
+    }
+}
