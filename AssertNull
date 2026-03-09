@@ -1,0 +1,23 @@
+Null Check (Very Common)
+public class UserService {
+    public String getUsername(){
+        return null;
+    }
+}
+Write test:
+
+Check that the result is null
+
+Use:
+
+assertNull(result);
+-----
+public  class UserServiceTest{
+    @Test
+    public void testGetUserName()
+    {
+        UserService us=new UserService();
+        String result=us.getUsername();
+        assertNull(result);
+    }
+}
