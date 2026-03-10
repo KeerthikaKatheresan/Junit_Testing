@@ -1,6 +1,7 @@
-@AssertThrows(Exception.class,()->{method();}  ->Junit 5
+@AssertThrows(Exception.class,()->{method();}  ->Junit 5    [uses lambda expressions]
 @Test(Exception.class)->Junit 4
-
+@AssertTimeout(Duration.ofSeconds(2),()->{method();} ->Junit 5 [uses lambda expressions]
+@Test(timeout=5)->Junit 4
 public class Calculator {
     public int divide(int a, int b) {
         return a / b;
