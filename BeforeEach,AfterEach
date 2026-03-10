@@ -1,0 +1,42 @@
+@BeforeEach
+@AfterEach
+
+This runs before every test method.e.g(obj initization)
+This runs after every test method.e.g(obj destruction)
+
+Class
+public class Calculator {
+    public int add(int a,int b){
+        return a+b;
+    }
+}
+Task
+
+Write tests for:
+
+2 + 3 = 5
+
+-----------------------------
+public class CalculatorTest{
+    Calculator c;
+    @BeforeEach //Every test case it will create new obj
+    public void setUp()
+    {
+        c=new Calculator();
+    }
+    
+    @Test
+    public void testAdd()
+    {
+        int result=c.add(2,3);
+        assertEquals(5,result);
+    }
+    @Test //another test case
+    
+    
+    @AfterEach()//After completing each test case it will destroy the obj
+    public void cleanUp()
+    {
+        c=null;
+    }
+}
