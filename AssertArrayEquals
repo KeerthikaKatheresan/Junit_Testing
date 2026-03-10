@@ -1,0 +1,28 @@
+assertArrayEquals
+Class
+public class ArrayUtil {
+    public int[] getNumbers() {
+        return new int[]{1,2,3,4};
+    }
+}
+Task
+
+Write a test case to verify:
+
+The returned array equals {1,2,3,4}
+
+Use:
+
+assertArrayEquals
+---------
+public class ArrayUtilTest{
+    @Test
+    public void testArrayEquals()
+    {
+        ArrayUtil au=new ArrayUtil();
+        int[] expected={1,2,3,4};
+        int[] result=au.getNumbers();
+        assertArrayEquals(expected,result);
+    }
+}
+----------------
