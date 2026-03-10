@@ -1,0 +1,50 @@
+Positive Number Checker (assertTrue / assertFalse)
+
+Class
+
+public class NumberCheck {
+    public boolean isPositive(int num) {
+        return num > 0;
+    }
+}
+
+Tasks
+Write JUnit tests:
+
+5 → should return true
+
+-3 → should return false
+
+0 → should return false
+
+Use:
+
+assertTrue
+
+assertFalse
+----
+public class NumberCheckerTest{
+    @Test   //assertTrue
+    public void testisPositive()
+    {
+        NumberCheck nc=new NumberCheck();
+        boolean result=nc.isPositive(5);
+        assertTrue(result);
+    }
+    
+    @Test   //assertFalse
+    public void testIsNegative()
+    {
+        NumberCheck nc-new NumberCheck();
+        boolean result=nc.isPositive(-3);
+        assertFalse(result);
+    }
+    
+    @Test   //assertFalse
+    public void testIsZero()
+    {
+        NumberCheck nc=new NumberCheck();
+        boolean result=nc.isPositive(0);
+        assertFalse(result);
+    }
+}
