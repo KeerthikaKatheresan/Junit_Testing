@@ -1,0 +1,58 @@
+
+
+Class
+public class Calculator {
+    public int add(int a,int b){
+        return a+b;
+    }
+}
+Task
+
+Write tests for:
+
+2 + 3 = 5
+
+-----------------------------
+public class CalculatorTest{
+    @Test
+    @DisplayName("My own test case 1:2+3=5")
+    public void testTwoPlusThree()
+    {
+        Calculator c=new Calculator();
+        int result=c.add(2,3);
+        assertEquals(5,result);
+    }
+    
+    
+    @RepeatedTest(7)    //it will run 7 times and no need @Test here
+    public void testAddRepeated()
+    {
+        Calculator c=new Calculator();
+        int result=c.add(71,8);
+        assertEquals(79,result);
+    }
+    
+    @Test
+    @Disabled //similar to @Ignore og Junit4
+    //Skip this test
+    public void testAdd()
+    {
+        System.out.println("I don't want to run this");
+    }
+    
+    @Test
+    public void testAssertSame()
+    {
+        Calculator c1=new Calculator();
+        Calculator c2=c1;//same reference(address)
+        assertSame(c1,c2);
+    }
+    
+    @Test
+    public void testAssertNotSame()
+    {
+        Calculator c1=new Calculator();
+        Calculator c2=new Calculator();
+        assertNotSame(c1,c2);
+    }
+}
