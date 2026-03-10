@@ -1,0 +1,25 @@
+User Service (assertNotNull)
+
+Class
+
+public class UserService {
+    public String getDefaultUser() {
+        return "Guest";
+    }
+}
+--------------------------------
+Tasks
+Write a test to verify:
+
+Returned value is not null
+
+public class UserServiceTest{
+    @Test
+    public void testNotNullValue()
+    {
+        UserService us=new UserService();
+        String result=us.getDefaultUser();
+        assertNotNull(result);
+    }
+    
+}
