@@ -1,0 +1,46 @@
+
+
+Class
+public class Calculator {
+    public int add(int a,int b){
+        return a+b;
+    }
+}
+Task
+
+Write tests for:
+
+2 + 3 = 5
+
+-----------------------------
+public class CalculatorTest{
+   static Calculator c; //When using BeforeAll field should be static else use BeforeEach without static
+    
+    @BeforeAll  //static
+    static void setUp()
+    {
+        c=new Calculator();
+        System.out.println("Testing started");
+    }
+    
+    
+    @ParameterizedTest
+    @ValueSource(ints={1,2,3,4,5})
+    public void testGreaterThanFive(int number)
+    {
+        int result=c.add(number,8);
+        assertTrue(result>5);
+    }
+    @Test
+    public void testFail()
+    {
+        fail("This is written intentionally");
+        //Usually this is written for an unimplemented method so when we run it will fail and then we can go and implement it.
+    }
+    @AfterAll //static
+    static void cleanUp()
+    {
+        c=null;
+        System.out.println("Testing completed");
+    }
+}
