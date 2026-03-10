@@ -1,5 +1,7 @@
-@BeforeEach
-@AfterEach
+@BeforeEach-Junit 5
+@AfterEach-Junit 5
+@Before-Junit 4
+@After-Junit 4
 
 This runs before every test method.e.g(obj initization)
 This runs after every test method.e.g(obj destruction)
